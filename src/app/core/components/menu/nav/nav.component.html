@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+  <nav>
+    <span>Restaurant Reports</span>
+  </nav>
+  <nav>
+    <a routerLink="/menu" routerLinkActive="true" mat-button>Home</a>
+  </nav>
+  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <a routerLink="/menu/form" routerLinkActive="true">New</a>
+    </button>
+    <button mat-menu-item>
+      <a routerLink="/menu/restaurant" routerLinkActive="true">Restaurants</a>
+    </button>
+  </mat-menu>
+  <span class="spacer"></span>
+  <nav>
+    <a mat-button *ngIf="user"> {{user.first_name}} {{user.last_name}}</a>
+  </nav>
+  <nav>
+    <a mat-button routerLink="/login" (click)="logout()">Logout</a>
+  </nav>
+</mat-toolbar>

@@ -1,0 +1,46 @@
+<div class="register-wrapper" fxLayout="row" fxLayoutAlign="center center">
+        <mat-card class="box">
+      
+          <mat-card-header>
+            <mat-card-title class="title">Create Restaurant</mat-card-title>
+          </mat-card-header>
+      
+          <form class="register-form" [formGroup]="form" (ngSubmit)="submit()">
+            <mat-card-content>
+      
+              <mat-form-field class="first_name">
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="first name" formControlName="first_name" required>
+      
+                <mat-error *ngIf="form.get('first_name')?.hasError('required')">
+                  First name cannot be empty
+                </mat-error>
+              </mat-form-field>
+      
+              <mat-form-field class="last_name">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="first name" formControlName="last_name" required>
+      
+                <mat-error *ngIf="form.get('last_name')?.hasError('required')">
+                  Last name cannot be empty
+                </mat-error>
+              </mat-form-field>
+      
+              <mat-form-field class="email">
+                <mat-label>Enter your email</mat-label>
+                <input matInput placeholder="xxx@yyyy.com" formControlName="email" required>
+      
+                <mat-error *ngIf="form.get('email')?.hasError('email')">
+                  Please enter a valid email address
+                </mat-error>
+      
+                <mat-error *ngIf="form.get('email')?.hasError('required')">
+                  Email cannot be empty
+                </mat-error>
+      
+              </mat-form-field>
+            </mat-card-content>
+            <button mat-raised-button color="primary" class="login-button">Create</button>
+          </form>
+        </mat-card>
+      </div>

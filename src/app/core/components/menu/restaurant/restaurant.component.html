@@ -1,0 +1,5 @@
+<mat-grid-list cols="4" rowHeight='400px'>
+        <mat-grid-tile *ngFor="let restaurant of restaurants" >
+                <app-card [restaurant]="restaurant"></app-card>
+        </mat-grid-tile>
+</mat-grid-list>
